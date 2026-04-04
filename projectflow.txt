@@ -21,3 +21,22 @@
 
 12. Run the exp notebooks
 13. git add - commit - push
+
+
+14. dvc init
+15. create a local folder as "local_s3" (temporary work)
+16. on terminal - "dvc remote add -d mylocal local_s3"
+
+17. Add code to below files/folders inside src dir:
+    - logger
+    - data_ingestion.py
+    - data_preprocessing.py
+    - feature_engineering.py
+    - model_building.py
+    - model_evaluation.py
+    - register_model.py
+18. add file - dvc.yaml
+19. add file - params.yaml
+20. DVC pipeline is ready to run - dvc repro
+21. Once do - dvc status
+22. git add - commit - push
