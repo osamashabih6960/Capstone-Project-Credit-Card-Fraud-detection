@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 import yaml
 import sys
 from src.logger import logging
-#from src.connections import s3_connection
+from src.connections import s3_connection
 
 def load_params(params_path: str) -> dict:
     """Load parameters from a YAML file."""
@@ -51,9 +51,16 @@ def save_data(df: pd.DataFrame, data_path: str) -> None:
 
 def main():
     try:
+        bucket_name = "learnyardproj1-bucket"
+        aws_access_key = ""
+        aws_secret_key = ""
+        FILE_KEY = "creditcard.csv"  # Path inside S3 bucket
+        
+        s3 = s3_connection.s3_operations(bucket_name,aws_access_key,aws_secret_key)
+        df = s3.fetch_file_from_s3(FILE_KEY)
          
 
-        df = load_data(data_url="https://raw.githubusercontent.com/vikashishere/Datasets/refs/heads/main/creditcard.csv")
+        # = load_data(data_url="https://raw.githubusercontent.com/vikashishere/Datasets/refs/heads/main/creditcard.csv")
 
         if df is None:
             logging.error("Data fetching failed, received None. Exiting.")
