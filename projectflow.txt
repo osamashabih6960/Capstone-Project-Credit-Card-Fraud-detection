@@ -57,7 +57,7 @@
 31. Add .github/workflows/ci.yaml file
 
 31.2. Create key token on Dagshub for auth: Go to dagshub repo > Your settings > Tokens > Generate new token
-    >> Please make sure to save token << >> capstone_test: f10c66bf37ca853638d7596697e1292a1c51f217<<
+    >> Please make sure to save token << >> capstone_test: b6f725c6de41137d885349d7b9cda841c574a162<<
     >> Add this auth token to github secret&var and update on ci file
 
 31.3. Add dir "tests"&"scripts" and files within. This will contain our test related scripts for CI.

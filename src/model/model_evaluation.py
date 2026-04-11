@@ -33,8 +33,8 @@ mlflow.set_tracking_uri(f'{dagshub_url}/{repo_owner}/{repo_name}.mlflow')
 
 # Below code block is for local use
 # -------------------------------------------------------------------------------------
-mlflow.set_tracking_uri("https://dagshub.com/osamashabih6960/Capstone-Project-Credit-Card-Fraud-detection.mlflow")
-dagshub.init(repo_owner='osamashabih6960', repo_name='Capstone-Project-Credit-Card-Fraud-detection', mlflow=True)
+# mlflow.set_tracking_uri("https://dagshub.com/osamashabih6960/Capstone-Project-Credit-Card-Fraud-detection.mlflow")
+# dagshub.init(repo_owner='osamashabih6960', repo_name='Capstone-Project-Credit-Card-Fraud-detection', mlflow=True)
 # -------------------------------------------------------------------------------------
 
 
