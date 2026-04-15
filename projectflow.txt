@@ -69,7 +69,7 @@
 35. go to root dir and: "docker build -t capstone-app:latest ."
 36. Try running the image: "docker run -p 8888:5000 capstone-app:latest"
     - This run will give 'OSError: capstone_test environment variable is not set'...obviously
-    - alternate: docker run -p 8888:5000 -e CAPSTONE_TEST=f10c66bf37ca853638d7596697e1292a1c51f217 capstone-app:latest
+    - alternate: docker run -p 8888:5000 -e CAPSTONE_TEST=b6f725c6de41137d885349d7b9cda841c574a162 capstone-app:latest
     - docker push youruser/capstone-app:latest (optional)
     - optional: try to delete image locally and pull it from dockerhub and run (optional)
 
@@ -83,11 +83,24 @@
 
 38. Execute CICD pipeline till the stage where we build and push image to ECR.
 
+----------------------------------------------------------------------------------
+*********Setup required before moving to EKS deployment*********
+----------------------------------------------------------------------------------
+* Run the following in PowerShell to see the AWS CLI path being used: Get-Command aws
+If the path points to your Anaconda environment (e.g., C:\Users\Personal\anaconda3\...), it’s a conflicting installation.
+
+* Uninstall Python-Based AWS CLI(Remove the conflicting AWS CLI from your Python environment): pip uninstall awscli
+* Verify it's uninstalled: aws --version
+* Update Environment Variables:
+> Make sure the .msi AWS CLI path is in your system PATH (usually installed at C:\Program Files\Amazon\AWSCLIV2\aws.exe).
+> Add it to your PATH if missing: Open Control Panel > System > Advanced System Settings > Environment Variables. Under "System Variables," find Path, and add the AWS CLI path: C:\Program Files\Amazon\AWSCLIV2\
+> Test AWS CLI Again: aws --version
+---------------------------------------------------------
 
 
 bucketname - learnyardproj1-bucket
 IAM-User - learnyardproj1-user
-
+372314668462
 
 
 
